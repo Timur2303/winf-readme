@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)https://moodle.leo-statz-berufskolleg.de/pluginfile.php/573582/mod_resource/content/0/eis_vorlage.html -->
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eis Auswahl</title>
+  <!-- Bootstrap CSS -->
+  <link href="./Eis Auswahl_files/bootstrap.min.css" rel="stylesheet">
+  <script>
+    
+    function fberechnePreis(){
+
+
+        var vPremiumeis     = 2.50;
+
+        var vExclusiveis    = 3.50;
+
+        var vMastereis      = 4.50;
+
+        var vKugeln         = document.getElementById("anzahlKugeln").value;
+
+        var vEissorte       = document.getElementById("eisSorte").value;
+
+        var vErgebnis;
+
+        var vAusgabe        ="";       
+
+        
+      
+
+        if (vEissorte=="Premiumeis") {
+
+       vErgebnis=vPremiumeis*vKugeln;
+
+
+
+}  else if(vEissorte=="Exclusiveis"){
+
+vErgebnis=vExclusiveis*vKugeln;
+
+}else {
+
+vErgebnis=vMastereis*vKugeln;
+
+}
+
+vAusgabe= vAusgabe+vErgebnis+"€" + " so viel kosten" + vKugeln + " Kugeln " + vEissorte
+
+
+
+
+
+
+
+document.getElementById("gesamtPreis").innerHTML = vAusgabe;
+
+    }
+
+  </script>
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Eis Auswahl</h1>
+    <form>
+      <div class="mb-3">
+        <label for="eisSorte" class="form-label">Wählen Sie Ihre Eissorte:</label>
+        <select id="eisSorte" class="form-select">
+          <option value="Premiumeis">Premiumeis - 2.50 € pro Kugel</option>
+          <option value="Exclusiveis">Exclusiveis - 3.50 € pro Kugel</option>
+          <option value="Mastereis">Matereis - 4.50 € pro Kugel</option>
+        </select>
+      </div>
+      
+      <div class="mb-3">
+        <label for="anzahlKugeln" class="form-label">Anzahl der Kugeln:</label>
+        <input type="number" class="form-control" id="anzahlKugeln" value="1" min="1">
+      </div>
+      
+      <!-- Button zum Berechnen des Preises -->
+      <button type="button" class="btn btn-primary" onclick="fberechnePreis()">Berechnen</button>
+      
+      <!-- Anzeige des Gesamtpreises -->
+      <h3 id="gesamtPreis" class="text-center mt-3">Gesamtpreis: 2.50 €</h3>
+    </form>
+  </div>
+
+
+  <!-- Bootstrap JS und Popper.js -->
+  <script src="./Eis Auswahl_files/popper.min.js.Download"></script>
+  <script src="./Eis Auswahl_files/bootstrap.min.js.Download"></script>
+
+  <div id="idAusgabe"></div>
+</body></html>
